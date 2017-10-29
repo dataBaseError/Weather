@@ -1,0 +1,31 @@
+- if current_user.location?
+  .container
+    .row
+      %p
+        Local Weather
+    .row
+      .col-sm
+        %p
+          = current_user.country
+      .col-sm
+        %p
+          = current_user.city
+      .col-sm
+        %p
+          = @user_tempature
+      .col-sm
+        %p
+          = @user_weather_type
+
+= form_tag search_path, method: :post do
+  .container
+    .form-group
+      %label{for: "search"} Location
+      = text_field_tag "search", nil, class: 'form-control'
+    .row
+      .col-sm
+      .col-sm
+        .form-group
+          = submit_tag "Submit", class: 'btn btn-primary'
+          = submit_tag "I'm Feeling Lucky", name: 'random', class: 'btn btn-secondary'
+      .col-sm

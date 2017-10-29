@@ -1,0 +1,33 @@
+= render partial: "search_header"
+
+.container
+  - if @city
+    .row
+      .col-sm
+        %p
+          = "City"
+      .col-sm
+        %p
+          = "Country"
+      .col-sm
+        %p
+          = "Weather"
+      .col-sm
+        %p
+          = "Tempature"
+    .row
+      .col-sm
+        %p
+          = @city
+      .col-sm
+        %p
+          = @country
+      .col-sm
+        %p
+          = @weather_type
+      .col-sm
+        %p
+          = @tempature
+  - else
+    %p
+      No location found

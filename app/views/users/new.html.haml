@@ -1,0 +1,19 @@
+.page-header
+  %h1 Register
+= form_for @user do |f|
+  = render 'shared/errors', object: @user
+  .form-group
+    = f.label :first_name
+    = f.text_field :first_name, class: 'form-control'
+  .form-group
+    = f.label :email
+    = f.email_field :email, class: 'form-control'
+  .form-group
+    = f.label :password
+    = f.password_field :password, class: 'form-control'
+    %small#passwordHelpInline.text-muted
+      Must be 8 characters long.
+  .form-group
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, class: 'form-control'
+  = f.submit 'Register', class: 'btn btn-primary'

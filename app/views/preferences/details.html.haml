@@ -1,0 +1,26 @@
+
+= javascript_include_tag "country"
+
+.container
+  = form_tag detail_updates_path, method: :post do
+    .row
+      .form-group
+        - if @country
+          = select 'detail', 'country', @countries, {include_blank: true, selected: @country.to_sym}, {class: 'form-control'}
+        - else
+          = select 'detail', 'country', @countries, {include_blank: true}, {class: 'form-control'}
+    .row
+      .form-group
+        - if @state
+          = select 'detail', 'state', @states, {include_blank: true, selected: @state.to_sym}, class: 'form-control'
+        - else
+          %select#detail_state{name: "detail[state]", disabled: true, class: 'form-control' }
+    .row
+      .form-group
+        - if @cities
+          = select 'detail', 'city', @cities, {include_blank: true, selected: @city}, class: 'form-control'
+        - else
+          %select#detail_city{name: "detail[city]", disabled: true, class: 'form-control'}
+    .form-group
+      = submit_tag "Save", class: 'btn btn-primary'
+

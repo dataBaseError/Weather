@@ -1,0 +1,9 @@
+- if object.errors.any?
+  .panel.panel-warning.errors
+    .panel-heading
+      %h5
+        %i.glyphicon.glyphicon-exclamation-sign
+        Found errors while saving
+    %ul.panel-body
+      - object.errors.full_messages.each do |msg|
+        %li= msg

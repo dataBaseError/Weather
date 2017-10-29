@@ -1,0 +1,7 @@
+%h1 Reset Password
+ 
+%p Please enter your email address below and then press "Reset Password".
+ 
+= form_tag resets_path do
+  = text_field_tag :email, nil, class: 'form-control'
+  = submit_tag "Reset Password", name: 'reset', class: 'btn btn-secondary'

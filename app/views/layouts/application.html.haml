@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Challenge
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          = link_to 'Sun Watch', root_path, class: 'navbar-brand'
+        #navbar
+          %ul.nav.navbar-nav
+            %li= link_to 'Home', root_path
+          %ul.nav.navbar-nav.pull-right
+            - if current_user
+              %li
+                - if !current_user.location?
+                  = link_to 'My Location', details_path
+                - else
+                  = link_to "#{current_user.city} - #{current_user.country}", details_path
+              %li
+                = link_to current_user.first_name, account_path
+              %li= link_to 'Sign Out', sign_out_path, method: :delete
+            - else
+              %li= link_to 'Sign In', sign_in_path
+
+    .container-fluid
+      - flash.each do |key, value|
+        %div{:class => "alert alert-#{key}"}
+          = value
+      = yield
