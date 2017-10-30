@@ -11,6 +11,7 @@
   .form-group
     = f.label :remember_me
     = f.check_box :remember_me
-  = f.submit "Log in", class: 'btn btn-primary'
-  = link_to 'Password Reset', new_reset_path, class: 'btn btn-primary'
-  = link_to 'Sign up', new_user_path, class: 'btn btn-primary'
+  .form-group
+    = f.submit "Log in", class: 'btn btn-primary'
+    = link_to 'Password Reset', new_reset_path, class: 'btn btn-primary'
+    = link_to 'Sign up', new_user_path, class: 'btn btn-primary'

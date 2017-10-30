@@ -3,6 +3,9 @@
 %p Please enter the new password below and then press "Update Password".
  
 = form_tag reset_path, :method => :put do
-  = password_field_tag :password, nil, class: 'form-control'
-  = password_field_tag :password_confirmation, nil, class: 'form-control'
-  = submit_tag "Update Password", name: 'update', class: 'btn btn-secondary'
+  .form-group
+    = password_field_tag :password, nil, class: 'form-control'
+  .form-group
+    = password_field_tag :password_confirmation, nil, class: 'form-control'
+  .form-group
+    = submit_tag "Update Password", name: 'update', class: 'btn btn-secondary'
