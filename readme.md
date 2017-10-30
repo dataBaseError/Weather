@@ -8,4 +8,5 @@
 	- WEATHER_API_KEY
 
 *Note* `MAIL_ADDRESS` needs to be from mail.com
+
 *Note* `WEATHER_API_KEY` is expected to be in the format of: `&APPID=xxxxxxxxxxxxxxxxxxxxxxxx`
