@@ -48,8 +48,6 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'hello_world', to: 'hello_worlds#index'
-      post 'twitter', to: 'tweets#search'
-
       post 'weather', to: 'weathers#search'
 
       get 'location/:country', to: 'locations#states'
