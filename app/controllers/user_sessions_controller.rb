@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
 
   def create_cache
     history = {}
-    current_user.histories.where(random: true).each do |row|
+    current_user.histories.each do |row|
       history[row.city] = {} unless history[row.city]
       history[row.city][row.state] = {} unless history[row.city][row.state]
       history[row.city][row.state][row.country] = true

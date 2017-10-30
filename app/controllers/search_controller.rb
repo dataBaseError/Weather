@@ -90,7 +90,7 @@ class SearchController < ApplicationController
       user: current_user
     )
 
-    add_to_cache(h.country, h.state, h.city) if random
+    add_to_cache(h.country, h.state, h.city)
     h
   end
 
