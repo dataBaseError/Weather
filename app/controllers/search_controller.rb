@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
   def index
     local_weather
   end

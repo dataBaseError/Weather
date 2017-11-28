@@ -1,5 +1,5 @@
 class PreferencesController < ApplicationController
-  before_filter :require_user
+  before_action :require_user
 
   def details
     @countries = CS.countries.to_a.map(&:reverse)

@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  before_filter :require_user, except: [:new, :create]
+  before_action :require_user, except: [:new, :create]
 
   def new
     @user_session = UserSession.new
